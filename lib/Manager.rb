@@ -15,7 +15,7 @@ class Manager
     end
 
     def employees
-        Employee.all.select {|employee| employee.name == self}
+        Employee.all.select {|employee| employee.manager_name == self}
     end
 
     def hire_employee(name, salary)
@@ -27,13 +27,7 @@ class Manager
     end
 
     def self.average_age
-        total = 0
-        Manager.all.select { |manager| total += manager.age}
-            avg = total / Manager.all.count 
+        Manager.all.sum {|manager| manager.age} / self.all.count 
     end
 
-    # def self.average_age
-    #     avg = Manager.total_age / Manager.all.count
-    #     avg.to_f
-    # end
 end

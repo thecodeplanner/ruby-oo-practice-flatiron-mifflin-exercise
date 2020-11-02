@@ -24,3 +24,5 @@ kobe = Employee.new("Kobe", 25000, toby)
 # p anthony.tax_bracket
 
 # p Manager.average_age.to_f
+
+binding.pry 
